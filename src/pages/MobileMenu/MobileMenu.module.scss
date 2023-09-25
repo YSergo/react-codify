@@ -1,0 +1,159 @@
+@import "../../variables.scss";
+
+.wrapper {
+  width: 100%;
+}
+
+//logo anim
+@keyframes dispersing {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.headerLeft button {
+  animation-name: dispersing;
+  animation-duration: 2s;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+//
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3vh;
+  padding-bottom: 3vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+
+  .headerLeft {
+    button {
+      font-family: "Sono";
+      font-weight: 400;
+      font-size: 1.32rem;
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      color: #000000 !important;
+
+      svg {
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+      }
+    }
+  }
+
+  .headerRight {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  height: 92vh;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 66vh;
+  width: 100%;
+
+  a {
+    margin: 0.3vw;
+  }
+
+  button {
+    color: #000000 !important;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    transition: background-color 0.3s ease-in-out;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+
+    span {
+      padding-left: 10vw;
+      padding-right: 10vw;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: rgba($color-hover, 0.5);
+    }
+
+    &:hover span {
+      opacity: 100%;
+    }
+
+    &.selected {
+      background-color: $color-hover;
+    }
+  }
+}
+
+.orderButton {
+  width: 100%;
+  height: auto;
+  background-color: $color-primary;
+  border: 0;
+  font-family: "Manrope";
+  padding: 6vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #000000 !important;
+}
+
+.footer {
+  margin-top: 2vh;
+  padding: 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    transition: color 0.3s ease-in-out;
+    font-size: 0.66rem;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+
+    &:active {
+      color: $color-primary;
+    }
+  }
+}
+
+.positionBottom {
+  position: sticky;
+  bottom: 2.2vh;
+}

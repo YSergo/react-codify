@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.wrapper {
+  margin-left: 220px;
+  margin-right: 220px;
+  margin-top: 60px;
+}
+
+.content {
+  margin-bottom: 120px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(396px, 1fr));
+  grid-gap: 40px;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 2vh + 9.5vh;
+  }
+
+  .content {
+    margin-bottom: 16vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(396px, 1fr));
+    grid-gap: 15vw;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

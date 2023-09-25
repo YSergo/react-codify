@@ -1,0 +1,139 @@
+@import "../../variables.scss";
+
+.card {
+  width: auto;
+  height: 554px;
+  background: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 5px solid $color-background;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+  }
+
+  h1 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000;
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  span {
+    flex: 1;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #565656;
+  }
+
+  button {
+    position: relative;
+    padding: 7px;
+    left: -7px;
+    width: 217px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+
+    &:hover {
+      background-color: $color-primary;
+      transform: translateX(6px);
+    }
+    
+    &:disabled {
+      background-color: $color-primary;
+      cursor: default;
+      width: 170px;
+      transform: none;
+      left: -20px;
+      padding: 20px;
+      z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    width: 22.5rem;
+    height: 31.4rem;
+    padding: 3%;
+    position: relative;
+    border: 0.3rem solid $color-background;
+    overflow: hidden;
+
+    h1 {
+      font-size: 2.3rem;
+      line-height: 3rem;
+      margin: 0;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+
+    span {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    button {
+      position: relative;
+      padding: 6%;
+      padding-right: 0;
+      padding-left: 0;
+      left: 0;
+      width: 10.8rem;
+      white-space: nowrap;
+      height: 2rem;
+      border: 0;
+      font-size: 1rem;
+      line-height: 2rem;
+
+      &:hover {
+        background-color: initial;
+        transform: initial;
+      }
+
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+
+      &:disabled {
+        position: absolute;
+        background-color: $color-primary;
+        width: 8.8rem;
+        transform: none;
+        top: 27.3rem;
+        left: 0;
+        padding: 6%;
+        z-index: 1;
+      }
+    }
+  }
+}

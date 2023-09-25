@@ -1,0 +1,157 @@
+@import "../../variables.scss";
+
+@keyframes moveDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(3px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blurOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 35px;
+  margin-right: 35px;
+  align-items: center;
+  padding: 20px;
+
+  &Left {
+    button {
+      font-family: "Sono";
+      font-weight: 400;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-left: 4px;
+        margin-right: 4px;
+      }
+    
+    }
+  }
+
+  &Center {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 105px;
+
+    a {
+      margin: 10px;
+    }
+
+    button {
+      width: 133px;
+      height: 44px;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0;
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+      transition: background-color 0.3s ease-in-out;
+      padding: 0;
+
+      &:hover {
+        background-color: rgba($color-hover, 0.5);
+      }
+
+      &:hover span {
+        opacity: 100%;
+      }
+
+      &.selected {
+        background-color: $color-hover;
+      }
+    }
+  }
+
+  &Right {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #f5f5f5;
+      width: 80px;
+      height: 40px;
+      border: 1px solid #c8efda;
+      cursor: pointer;
+
+      p {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        width: 20px; // Adjusted width
+        text-align: right;
+        animation-duration: 0.9s;
+        animation-fill-mode: both;
+      }
+
+      &.blur-out p {
+        animation-name: blurOut;
+      }
+
+      &.blur-in p {
+        animation-name: blurIn;
+      }
+
+      svg {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &.move-down svg {
+        animation-name: moveDown;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+      }
+
+      &.move-up svg {
+        animation-name: moveUp;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
