@@ -195,8 +195,8 @@
       }
   
       button {
-        width: 13vw;
-        height: 44px;
+        width: 15vw;
+        height: auto;
         cursor: pointer;
         background-color: transparent;
         border: 0;
@@ -204,10 +204,10 @@
         font-style: normal;
         font-weight: 400;
         font-size: 2vw;
-        line-height: 27px;
+        line-height: 0;
         text-align: center;
         transition: background-color 0.3s ease-in-out;
-        padding: 0;
+        padding: 2.4vw;
   
         &:hover {
           background-color: rgba($color-hover, 0.5);
