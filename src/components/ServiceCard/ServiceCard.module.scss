@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .card {
   width: 100%;
@@ -41,7 +41,7 @@
   flex-direction: column;
 
   h3 {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -52,7 +52,7 @@
   }
 
   p {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -65,7 +65,7 @@
   }
 
   span {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -79,7 +79,7 @@
   .card {
     width: 22.5rem;
     height: 12rem;
-  
+
     svg {
       width: auto;
       height: 100%;

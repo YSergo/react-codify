@@ -84,7 +84,7 @@ function About() {
               <h6>Богдан Топоров</h6>
               <span>
                 Co-founder <br />
-                Back-end разработчик
+                Backend разработчик
               </span>
             </div>
             <p>
@@ -100,12 +100,12 @@ function About() {
               <h6>Сергей Якунчихин</h6>
               <span>
                 Co-founder <br />
-                Full-stack разработчик
+                Frontend разработчик
               </span>
             </div>
             <p>
-              Тот, кто делает всё: от воплощения дизайна в код до разработки и оптимизации серверной части,
-              обеспечивая эффективность и стабильность каждого аспекта проекта.
+              Тот, кто воплощает дизайн в код, обеспечивая интерактивность и функциональность вашего сайта или
+              приложения
             </p>
           </div>
         )}
@@ -130,13 +130,13 @@ function About() {
             className={selectedMember === 'sy' ? styles.selected : ''}
             onClick={() => setSelectedMember('sy')}
           >
-            Full-stack разработка
+            Frontend разработка
           </button>
           <button
             className={selectedMember === 'bt' ? styles.selected : ''}
             onClick={() => setSelectedMember('bt')}
           >
-            Back-end разработка (ex)
+            Backend разработка (ex)
           </button>
           <button
             className={selectedMember === 'kl' ? styles.selected : ''}

@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .wrapper {
   margin-left: 220px;
@@ -35,5 +35,25 @@
   .contacts {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1336px) {
+  .wrapper {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 0px;
+  }
+  
+  .content {
+    margin-bottom: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 40px;
+  }
+  
+  .contacts {
+    display: flex;
+    justify-content: space-between;
   }
 }
