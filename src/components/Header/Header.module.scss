@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 @keyframes moveDown {
   from {
@@ -50,7 +50,7 @@
 
   &Left {
     button {
-      font-family: "Sono";
+      font-family: 'Sono';
       font-weight: 400;
       font-size: 20px;
       cursor: pointer;
@@ -64,7 +64,6 @@
         margin-left: 4px;
         margin-right: 4px;
       }
-    
     }
   }
 
@@ -83,7 +82,7 @@
       cursor: pointer;
       background-color: transparent;
       border: 0;
-      font-family: "Manrope";
+      font-family: 'Manrope';
       font-style: normal;
       font-weight: 400;
       font-size: 20px;
@@ -118,7 +117,7 @@
       cursor: pointer;
 
       p {
-        font-family: "Manrope";
+        font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -161,30 +160,33 @@
     margin-left: 0vw;
     margin-right: 0vw;
     padding: 20px;
-  
+
     &Left {
       button {
         font-size: 2.2vw;
         cursor: pointer;
       }
     }
-  
+
     &Center {
       margin-right: 13%;
-  
+
       a {
         margin: 0px;
       }
-  
+
       button {
-        width: 15vw;
+        width: 14vw;
         height: auto;
-        font-size: 2.2vw;
+        font-size: 2vw;
         line-height: 0;
         padding: 2.4vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
-  
+
     &Right {
       button {
         width: 8vw;
@@ -192,7 +194,7 @@
         height: 5vw;
         max-height: 50px;
         border: 0.2vw solid #c8efda;
-  
+
         p {
           font-size: 2vw;
           line-height: 27px;
