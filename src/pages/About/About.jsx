@@ -51,7 +51,7 @@ function About() {
     <div className={styles.wrapper}>
       <div className={styles.description}>
         <div className={styles.container1}>
-          <h2 className={styles.line1}>Мы — команда</h2>
+          <h2 className={styles.line1}>Мы — команда друзей,</h2>
           <h2 className={styles.line2}>&nbsp;разработчиков</h2>
           <h2 className={styles.line3}>и дизайнеров,</h2>
         </div>
