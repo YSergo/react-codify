@@ -15,7 +15,7 @@ function Request({ onClose, showCloseButton = false }) {
 
   const [animationTrigger, setAnimationTrigger] = useState(false);
 
-  const [isSent, SetisSent] = useState(false);
+  const [isSent, setIsSent] = useState(false);
   const [sending, setSending] = useState(false);
 
   const validateForm = () => {
@@ -73,14 +73,17 @@ function Request({ onClose, showCloseButton = false }) {
     };
 
     try {
-      const response = await axios.post('https://apialisada11-721689c1d185.herokuapp.com/api/application/', formData);
-      console.log(response.data);
-      setSending(false);
-      SetisSent(true);
+      await axios.post('https://apialisada11-721689c1d185.herokuapp.com/api/application/', formData);
+      setTimeout(() => {
+        setSending(false);
+        setIsSent(true);
+      }, 3000);
     } catch (error) {
-      console.error(error);
-      alert(':C');
-      setSending(false);
+      setTimeout(() => {
+        console.error(error);
+        alert('Произошла ошибка при попытке отправить данные формы, попробуйте позже');
+        setSending(false);
+      }, 3000);
     }
   };
 
