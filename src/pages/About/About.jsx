@@ -80,7 +80,7 @@ function About() {
         {selectedMember === 'bt' && (
           <div className={styles.memberCardWrapper}>
             <div className={styles.memberCard}>
-              <img src={bo} alt='person' style={{ opacity: 0.5 }} />
+              <img src={bo} alt='person' />
               <h6>Богдан Топоров</h6>
               <span>
                 Co-founder <br />
@@ -112,7 +112,7 @@ function About() {
         {selectedMember === 'kl' && (
           <div className={styles.memberCardWrapper}>
             <div className={styles.memberCard}>
-              <img src={kris} alt='person' style={{ opacity: 0.5 }} />
+              <img src={kris} alt='person' />
               <h6>Кристина Николаенко</h6>
               <span>
                 Co-founder
@@ -136,13 +136,13 @@ function About() {
             className={selectedMember === 'bt' ? styles.selected : ''}
             onClick={() => setSelectedMember('bt')}
           >
-            Backend разработка (ex)
+            Backend разработка
           </button>
           <button
             className={selectedMember === 'kl' ? styles.selected : ''}
             onClick={() => setSelectedMember('kl')}
           >
-            UX/UI дизайн (ex)
+            UX/UI дизайн
           </button>
         </div>
       </div>

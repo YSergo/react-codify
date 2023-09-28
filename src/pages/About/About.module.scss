@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 .wrapper {
   margin-left: 220px;
@@ -7,7 +7,7 @@
 }
 
 h2 {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -42,7 +42,7 @@ h2 {
 
   p {
     margin-left: 280px;
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
@@ -79,7 +79,7 @@ h2 {
     margin-right: 40px;
 
     img {
-      box-shadow: 0px 0px 15px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
       width: auto;
       height: 250px;
       object-fit: cover;
@@ -88,7 +88,7 @@ h2 {
     }
 
     h6 {
-      font-family: "Manrope";
+      font-family: 'Manrope';
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
@@ -97,7 +97,7 @@ h2 {
       margin-bottom: 5px;
     }
     span {
-      font-family: "Manrope";
+      font-family: 'Manrope';
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -108,7 +108,7 @@ h2 {
 
   p {
     margin: 0;
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -126,7 +126,7 @@ h2 {
       background: transparent;
       color: #242424;
       border: 0;
-      font-family: "Manrope";
+      font-family: 'Manrope';
       font-style: normal;
       font-weight: 400;
       font-size: 20px;
@@ -169,7 +169,7 @@ h2 {
   margin-bottom: 120px;
   h3,
   span {
-    font-family: "Montserrat";
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -233,9 +233,6 @@ h2 {
   }
 
   .description {
-    display: flex;
-    flex-direction: column;
-
     .container1 {
       .line1,
       .line2,
@@ -297,7 +294,7 @@ h2 {
       padding: 2.5%;
 
       img {
-        box-shadow: 0px 0px 4vw 1.2vw rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
         width: auto;
         height: 12rem;
         margin-bottom: 0.5rem;
@@ -310,7 +307,7 @@ h2 {
       }
 
       span {
-        font-family: "Manrope";
+        font-family: 'Manrope';
         font-style: normal;
         font-weight: 400;
         font-size: 0.9rem;
@@ -404,5 +401,114 @@ h2 {
   .contacts {
     display: flex;
     flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1336px) {
+  .wrapper {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 4vw;
+  }
+
+  h2 {
+    font-size: 5vw;
+    line-height: 6vw;
+  }
+
+  .description {
+    .container1 {
+      .line1,
+      .line2,
+      .line3 {
+        display: block;
+      }
+      .line1 {
+        text-align: left;
+      }
+
+      .line2 {
+        text-align: right;
+      }
+
+      .line3 {
+        text-align: center;
+      }
+    }
+
+    .container2 {
+      .line4,
+      .line5 {
+        display: block;
+      }
+      .line5 {
+        text-align: right;
+      }
+    }
+
+    p {
+      margin-left: 0;
+      font-size: 2.5vw;
+      line-height: 3.1vw;
+      margin: 0;
+      margin-top: 4vw;
+      margin-bottom: 8vw;
+      &.leftAlign {
+        margin-left: 0;
+        margin-bottom: 8vw;
+      }
+    }
+  }
+
+  .ourTeam {
+    margin-top: 5.5vw;
+    margin-bottom: 5.5vw;
+
+    .memberCard {
+      width: 26vw;
+      height: 47vw;
+      padding: 1.5vw;
+      margin-right: 0;
+
+      img {
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+        width: auto;
+        height: 31vw;
+        margin-bottom: 3vw;
+      }
+
+      h6 {
+        font-size: 2.3vw;
+        margin-bottom: 1vw;
+        line-height: 3vw;
+      }
+
+      span {
+        font-size: 1.8vw;
+        line-height: 3vw;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 2vw;
+      line-height: 3vw;
+      margin-bottom: 0vh;
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
+
+    .buttons {
+      button {
+        font-size: 2vw;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        height: 6vw;
+        width: auto;
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 }
