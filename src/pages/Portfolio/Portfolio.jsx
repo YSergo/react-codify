@@ -62,7 +62,7 @@ function Portfolio({ projects, projectsLoading, isMobile }) {
                 key={item.id}
                 title={item.title}
                 description={item.description}
-                image={item.link}
+                image={item.image_url}
                 url={item.url_to_project}
               />
             ))}
