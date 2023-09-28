@@ -1,6 +1,6 @@
 import styles from './PortfolioCard.module.scss';
 
-function PorfolioCard({ title, description, image, url }) {
+function PortfolioCard({ title, description, image, url }) {
   const handleClick = (link) => {
     if (link) {
       window.open(link, '_blank');
@@ -29,4 +29,4 @@ function PorfolioCard({ title, description, image, url }) {
   );
 }
 
-export default PorfolioCard;
+export default PortfolioCard;
