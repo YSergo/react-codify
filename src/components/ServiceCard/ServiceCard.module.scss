@@ -80,6 +80,19 @@
     width: 22.5rem;
     height: 12rem;
 
+    &:hover {
+      box-shadow: none;
+      background-color: none;
+      transform: none;
+    }
+
+    .hoverfill {
+      transition: none;
+    }
+    &:hover .hoverfill {
+      fill: #D6E9FF;
+    }
+
     svg {
       width: auto;
       height: 100%;
@@ -105,6 +118,14 @@
       font-size: 1rem;
       line-height: 2rem;
     }
+  }
+  .card.inView {
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+  }
+  
+  .card.inView .hoverfill {
+    fill: $color-primary;
   }
 }
 

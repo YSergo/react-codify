@@ -1,4 +1,5 @@
 import styles from './PortfolioCard.module.scss';
+import React, { useEffect, useRef, useState } from 'react';
 
 function PortfolioCard({ title, description, image, url }) {
   const handleClick = (link) => {
@@ -10,8 +11,28 @@ function PortfolioCard({ title, description, image, url }) {
   const isProjectAvailable = url !== null;
   const buttonText = isProjectAvailable ? 'Смотреть проект' : 'В разработке';
 
+  const [isInView, setIsInView] = useState(false);
+  const cardRef = useRef();
+
+  const checkIfInView = () => {
+    const rect = cardRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const elementMiddle = rect.top + rect.height / 2;
+    const isInView = elementMiddle >= windowHeight * 0.1 && elementMiddle <= windowHeight * 0.9;
+    setIsInView(isInView);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkIfInView);
+    checkIfInView(); // Проверить при монтировании
+
+    return () => {
+      window.removeEventListener('scroll', checkIfInView);
+    };
+  }, []);
+
   return (
-    <div className={styles.card}>
+    <div ref={cardRef} className={`${styles.card} ${isInView ? styles.inView : ''}`}>
       <img src={image} alt='site' />
       <h1>{title}</h1>
       <span>{description}</span>

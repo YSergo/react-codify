@@ -1,12 +1,38 @@
 import styles from './ServiceCard.module.scss';
+import React, { useEffect, useRef, useState } from 'react';
 
 function ServiceCard({ setDrawerOpened, title, description, price }) {
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
 
+  const [isInView, setIsInView] = useState(false);
+  const cardRef = useRef();
+
+  const checkIfInView = () => {
+    const rect = cardRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const elementMiddle = rect.top + rect.height / 2;
+    const isInView = elementMiddle >= windowHeight * 0.25 && elementMiddle <= windowHeight * 0.75;
+    setIsInView(isInView);
+};
+
+useEffect(() => {
+    window.addEventListener('scroll', checkIfInView);
+    checkIfInView(); // Проверить при монтировании
+    
+    return () => {
+      window.removeEventListener('scroll', checkIfInView);
+    };
+}, []);
+
+
   return (
-    <div onClick={() => setDrawerOpened(true)} className={styles.card}>
+    <div
+      ref={cardRef}
+      onClick={() => setDrawerOpened(true)}
+      className={`${styles.card} ${isInView ? styles.inView : ''}`}
+    >
       <div className={styles.info}>
         <h3>{title}</h3>
         <p>{description}</p>
