@@ -412,7 +412,7 @@ h2 {
   }
 
   h2 {
-    font-size: 5vw;
+    font-size: 4.5vw;
     line-height: 6vw;
   }
 
@@ -456,6 +456,7 @@ h2 {
       &.leftAlign {
         margin-left: 0;
         margin-bottom: 8vw;
+        text-align: center;
       }
     }
   }
