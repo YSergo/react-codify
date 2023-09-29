@@ -1,8 +1,9 @@
 import styles from './Request.module.scss';
 import axios from 'axios';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-function Request({ onClose, showCloseButton = false }) {
+function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsOrigin, servicesIsOrigin }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -87,10 +88,17 @@ function Request({ onClose, showCloseButton = false }) {
     }
   };
 
+  const location = useLocation();
+  const isAboutPage = location.pathname === '/about';
+
   return (
     <div className={styles.request}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
+        {(((isAboutPage && aboutIsOrigin) || portfolioIsOrigin) || servicesIsOrigin) && (
+          <div className={styles.justSpace}></div>
+        )}
+
         {showCloseButton && (
           <svg onClick={onClose} viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path d='M26 2L2 26' stroke='black' strokeWidth='3' />

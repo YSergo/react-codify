@@ -3,7 +3,8 @@ import Request from '../../components/Request/Request';
 import styles from './Portfolio.module.scss';
 import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import ContentLoader from 'react-content-loader';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 
 function Portfolio({ projects, projectsLoading, isMobile }) {
   useEffect(() => {
@@ -50,6 +51,8 @@ function Portfolio({ projects, projectsLoading, isMobile }) {
     return skeletons;
   };
 
+  const [portfolioIsOrigin, setPortfolioIsOrigin] = useState(true);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -69,7 +72,7 @@ function Portfolio({ projects, projectsLoading, isMobile }) {
       </div>
       <div className={styles.contacts}>
         <Contacts />
-        <Request />
+        <Request portfolioIsOrigin={() => setPortfolioIsOrigin(portfolioIsOrigin)} />
       </div>
     </div>
   );

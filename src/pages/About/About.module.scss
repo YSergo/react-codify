@@ -271,14 +271,14 @@ h2 {
       margin-bottom: 13.4vw;
       &.leftAlign {
         margin-left: 0;
-        margin-bottom: 12vw;
+        margin-bottom: 18vw;
       }
     }
   }
 
   .ourTeam {
     margin-top: 1.4rem;
-    margin-bottom: 3rem;
+    margin-bottom: 18vw;
     flex-direction: column-reverse;
 
     .memberCard {
@@ -339,6 +339,9 @@ h2 {
         height: 10vw;
         width: auto;
         margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

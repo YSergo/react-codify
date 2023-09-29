@@ -3,7 +3,7 @@ import Contacts from '../../components/Contacts/Contacts';
 import Request from '../../components/Request/Request';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import ContentLoader from 'react-content-loader';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
   useEffect(() => {
@@ -50,6 +50,8 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
     return skeletons;
   };
 
+  const [servicesIsOrigin, setServicesIsOrigin] = useState(true)
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -69,7 +71,7 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
       </div>
       <div className={styles.contacts}>
         <Contacts />
-        <Request />
+        <Request servicesIsOrigin={() => setServicesIsOrigin(servicesIsOrigin)} />
       </div>
     </div>
   );
