@@ -16,7 +16,7 @@
     height: 100%;
     max-height: 266px;
     object-fit: cover;
-    object-position: top; 
+    object-position: top;
     background-color: #e0e0e0;
   }
 
@@ -144,11 +144,10 @@
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 1336px) {
   .card {
-    width: calc(
-      50% - 15px
-    ); 
+    width: calc(50% - 15px);
     height: 52vw;
     background: #ffffff;
     padding: 1.7vw;
@@ -158,21 +157,21 @@
     border: 0.8vw solid $color-background;
     box-sizing: border-box;
     transition: border-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
-    
+
     img {
       max-height: 26.8vw;
       object-fit: cover;
-      object-position: top; 
+      object-position: top;
       background-color: #e0e0e0;
       height: 100%;
     }
-    
+
     &:hover {
       border-color: $color-primary;
       box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
       transform: translateY(-5px);
     }
-  
+
     h1 {
       font-family: 'Montserrat';
       font-style: normal;
@@ -183,7 +182,7 @@
       margin: 0;
       margin-top: 1.3vw;
     }
-  
+
     span {
       flex: 1;
       font-family: 'Manrope';
@@ -193,7 +192,7 @@
       line-height: 2.4vw;
       color: #565656;
     }
-  
+
     button {
       position: relative;
       padding: 0.7vw;
@@ -214,12 +213,12 @@
       color: #000000;
       transition: background-color 0.3s ease-in-out;
       transition: transform 0.15s ease-in-out;
-  
+
       &:hover {
         background-color: $color-primary;
         transform: translateX(6px);
       }
-  
+
       &:disabled {
         background-color: $color-primary;
         cursor: default;
