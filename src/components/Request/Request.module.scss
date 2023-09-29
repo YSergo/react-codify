@@ -281,8 +281,11 @@
 
     button {
       font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: auto;
-      height: auto;
+      height: 11vw;
       padding: 1vw;
       padding-left: 10vw;
       padding-right: 10vw;
