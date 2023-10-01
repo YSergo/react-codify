@@ -57,7 +57,7 @@ function App() {
         setFavorsLoading(true);
         const response = await axios.get('https://apialisada11-721689c1d185.herokuapp.com/api/services/', {
           headers: {
-            Authorization: `Token 1b8beec80eef542335344ef2ae01edfae58b47b9`, //Hello GitHub #1
+            Authorization: `Token a1c9a99ab227e3432fd17d3fa05cde9088bdb0d0`, //Hello GitHub #1
           },
         });
         setFavors(response.data);
@@ -81,7 +81,7 @@ function App() {
         setProjectsLoading(true);
         const response = await axios.get('https://apialisada11-721689c1d185.herokuapp.com/api/projects/', {
           headers: {
-            Authorization: `Token 1b8beec80eef542335344ef2ae01edfae58b47b9`, //Hello GitHub #2
+            Authorization: `Token a1c9a99ab227e3432fd17d3fa05cde9088bdb0d0`, //Hello GitHub #2
           },
         });
         setProjects(response.data);
