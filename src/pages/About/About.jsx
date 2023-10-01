@@ -57,7 +57,7 @@ function About() {
           <h2 className={styles.line2}>&nbsp;разработчиков</h2>
           <h2 className={styles.line3}>и дизайнеров,</h2>
         </div>
-        <p>
+        <p className={styles.marginRight}>
           которая специализируется на веб-разработке и имеет большой опыт в создании высококачественных
           продуктов для наших клиентов.
         </p>
