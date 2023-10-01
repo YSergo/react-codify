@@ -101,14 +101,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 220px;
-    margin-right: 220px;
-    margin-top: 130px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 25vh;
 
     button {
       align-self: flex-start;
-      width: 279px;
-      height: 64px;
+      width: 25vw;
+      height: 6.5vw;
       cursor: pointer;
       background-color: $color-primary;
       border: 0;
@@ -116,8 +116,8 @@
       padding: 0;
       font-style: normal;
       font-weight: 600;
-      font-size: 28px;
-      line-height: 38px;
+      font-size: 2.5vw;
+      line-height: 0;
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
@@ -128,10 +128,10 @@
     h1 {
       font-family: 'Montserrat';
       font-weight: 600;
-      font-size: 80px;
-      line-height: 110px;
+      font-size: 7vw;
+      line-height: 10vw;
       margin: 0;
-      margin-bottom: 40px;
+      margin-bottom: 3vw;
     }
   }
 }
