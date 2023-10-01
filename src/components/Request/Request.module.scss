@@ -333,3 +333,184 @@
     }
   }
 }
+
+@media (min-width: 768px) and (max-width: 1336px) {
+  .request {
+    display: flex;
+    flex-direction: column;
+
+    .requestTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3vw;
+
+      h2 {
+        margin: 0;
+        margin-bottom: 0;
+        display: flex;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 4.5vw;
+        color: black;
+      }
+
+      svg {
+        width: 4vw;
+        height: 4vw;
+        cursor: pointer;
+
+        path {
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover path {
+          stroke: #c8efda;
+        }
+      }
+    }
+  }
+
+  .contactForm {
+    height: 70vw;
+    width: 44.3vw;
+    background: #ffffff;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2.2vw;
+    padding-top: 0px;
+
+    input {
+      width: 40vw;
+      height: 5.5vw;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 2.2vw;
+      line-height: 0;
+      padding: 1.2vw;
+      border: 1px solid $color-text;
+
+      &::placeholder {
+        color: $color-placeholder;
+      }
+
+      &:focus {
+        transition: border-color 0.6s ease-in-out;
+        border-color: $color-primary;
+      }
+      transition: border-color 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $color-primary;
+      }
+    }
+
+    .requestInput {
+      width: 40vw;
+      height: 200px;
+      margin-bottom: 20px;
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 2.2vw;
+      line-height: 2.5vw;
+      padding: 1.2vw;
+      border: 1px solid $color-text;
+      resize: none;
+      transition: border-color 0.6s ease-in-out;
+      flex: 1;
+
+      &:hover {
+        border-color: $color-primary;
+      }
+
+      &::placeholder {
+        color: $color-placeholder;
+      }
+      &:focus {
+        transition: border-color 0.6s ease-in-out;
+        border-color: $color-primary;
+      }
+    }
+
+    h3 {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 3vw;
+      line-height: 3.9vw;
+      margin: 0;
+      align-self: flex-start;
+    }
+
+    button {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.5vw;
+      line-height: 3.3vw;
+      width: 20vw;
+      height: auto;
+      padding: 1vw;
+      cursor: pointer;
+      background-color: #c8efda;
+      border: 0;
+      align-self: flex-start;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $color-hover;
+      }
+    }
+  }
+
+  .contactForm {
+    .secondP {
+      margin-bottom: 17px;
+    }
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    input {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+  }
+
+  .errorInput {
+    animation: inputErrorAnimation 1.2s ease-in-out;
+  }
+
+  .loadingIcon {
+    display: inline-block;
+    border: 5px solid $color-primary;
+    border-left-color: black;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    animation: loading 1s linear infinite;
+    margin-top: 133px;
+  }
+
+  .sentRequest {
+    padding-top: 133px;
+    h4 {
+      font-family: Montserrat;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 32px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin: 0;
+      margin-top: 40px;
+      animation: zoomIn 0.5s ease-in-out;
+    }
+    svg {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  }
+}
