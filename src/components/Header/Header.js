@@ -1,35 +1,10 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
+import logo from './1689869872960.png';
 
 function Header() {
-  const [language, setLanguage] = useState('0');
-  const [animation, setAnimation] = useState('');
-  const [svgAnimation, setSvgAnimation] = useState('');
-
   const location = useLocation();
   const isSelected = (path) => location.pathname === path;
-
-  const [buttonKey, setButtonKey] = useState(0);
-  const switchLanguage = () => {
-    setButtonKey((prevKey) => prevKey + 1);
-    setAnimation('blur-out');
-    setSvgAnimation('move-down');
-
-    setTimeout(() => {
-      setLanguage((prevLanguage) => (prevLanguage === '0' ? '1' : '0'));
-      setAnimation('blur-in');
-    }, 600);
-
-    setTimeout(() => {
-      setSvgAnimation('move-up');
-    }, 1200);
-
-    setTimeout(() => {
-      setAnimation('');
-      setSvgAnimation('');
-    }, 2400);
-  };
 
   return (
     <header className={styles.header}>
@@ -64,14 +39,11 @@ function Header() {
           </button>
         </Link>
       </nav>
-      <nav className={styles.headerRight}>
-        <button onClick={switchLanguage} key={buttonKey} className={`${styles[animation]} ${styles[svgAnimation]}`}>
-          <p>{language}</p>
-          <svg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'>
-            <path d='M14 1L7.5 7L1 1' stroke='black' strokeLinecap='square' />
-          </svg>
-        </button>
-      </nav>
+      <Link to='/'>
+        <div>
+          <img className={styles.logo} src={logo} alt='logoCS' />
+        </div>
+      </Link>
     </header>
   );
 }
