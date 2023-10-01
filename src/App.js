@@ -34,6 +34,7 @@ function App() {
   //mob
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isMobile = windowWidth <= 767;
+  const isTablet = windowWidth > 767 && windowWidth <= 1336;
 
   useEffect(() => {
     const handleResize = () => {
@@ -126,7 +127,8 @@ function App() {
           element={<Portfolio projects={projects} projectsLoading={projectsLoading} isMobile={isMobile} />}
         ></Route>
       </Routes>
-      {!isMobile && !isHomePage && <Footer />}
+      {!isTablet && !isMobile && !isHomePage && <Footer />}
+      {isTablet && (<div style={{marginTop: '35px'}}></div>)}
     </div>
   );
 }
