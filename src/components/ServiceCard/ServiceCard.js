@@ -15,26 +15,25 @@ function ServiceCard({ setDrawerOpened, title, description, price, onCardClick }
     const elementMiddle = rect.top + rect.height / 2;
     const isInView = elementMiddle >= windowHeight * 0.25 && elementMiddle <= windowHeight * 0.75;
     setIsInView(isInView);
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', checkIfInView);
     checkIfInView(); // Проверить при монтировании
-    
+
     return () => {
       window.removeEventListener('scroll', checkIfInView);
     };
-}, []);
-
+  }, []);
 
   return (
     <div
-      className={styles.card}
+      className={`${styles.card} ${isInView ? styles.inView : ''}`}
       ref={cardRef}
       onClick={() => {
         setDrawerOpened(true);
         onCardClick({ title, description, price });
-    }}
+      }}
     >
       <div className={styles.info}>
         <h3>{title}</h3>
