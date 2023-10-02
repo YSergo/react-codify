@@ -1,7 +1,7 @@
 import styles from './ServiceCard.module.scss';
 import React, { useEffect, useRef, useState } from 'react';
 
-function ServiceCard({ setDrawerOpened, title, description, price }) {
+function ServiceCard({ setDrawerOpened, title, description, price, onCardClick }) {
   function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
@@ -29,9 +29,12 @@ useEffect(() => {
 
   return (
     <div
+      className={styles.card}
       ref={cardRef}
-      onClick={() => setDrawerOpened(true)}
-      className={`${styles.card} ${isInView ? styles.inView : ''}`}
+      onClick={() => {
+        setDrawerOpened(true);
+        onCardClick({ title, description, price });
+    }}
     >
       <div className={styles.info}>
         <h3>{title}</h3>

@@ -11,6 +11,7 @@ function Drawer({
   setOrigin,
   setOpenedFromMenu,
   openedFromMenu,
+  selectedCardData
 }) {
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -46,6 +47,7 @@ function Drawer({
                 }
               }}
               showCloseButton={true}
+              selectedCardData={selectedCardData} 
             />
           </div>
         ) : (

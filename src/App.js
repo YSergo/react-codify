@@ -96,6 +96,8 @@ function App() {
     fetchData();
   }, []);
 
+  const [selectedCardData, setSelectedCardData] = useState({});
+
   return (
     <div className='app'>
       <Drawer
@@ -106,6 +108,7 @@ function App() {
         setDrawerOpened={setDrawerState}
         openedFromMenu={openedFromMenu}
         setOpenedFromMenu={setOpenedFromMenu}
+        selectedCardData={selectedCardData}
       />
       {isMobile ? <HeaderMobile setDrawerOpened={setDrawerState} setOrigin={setOrigin} /> : <Header />}
       <Routes>
@@ -119,6 +122,7 @@ function App() {
               favors={favors}
               favorsLoading={favorsLoading}
               isMobile={isMobile}
+              setSelectedCardData={setSelectedCardData}
             />
           }
         ></Route>

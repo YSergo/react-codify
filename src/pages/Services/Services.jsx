@@ -5,7 +5,7 @@ import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import ContentLoader from 'react-content-loader';
 import { useEffect, useState } from 'react';
 
-function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
+function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -52,6 +52,11 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
 
   const [servicesIsOrigin, setServicesIsOrigin] = useState(true)
 
+    // Обработчик для установки данных из выбранной карточки
+    const handleCardClick = (data) => {
+        setSelectedCardData(data);
+    };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -66,6 +71,7 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile }) {
                 description={item.description}
                 price={item.price}
                 setDrawerOpened={setDrawerOpened}
+                onCardClick={handleCardClick}
               />
             ))}
       </div>

@@ -1,9 +1,9 @@
 import styles from './Request.module.scss';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsOrigin, servicesIsOrigin }) {
+function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsOrigin, servicesIsOrigin, selectedCardData = {} }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -91,11 +91,18 @@ function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsO
   const location = useLocation();
   const isAboutPage = location.pathname === '/about';
 
+  useEffect(() => {
+    if (showCloseButton && selectedCardData.title && selectedCardData.description) {
+      setRequest('Хочу карточку [ ' + selectedCardData.title + ': ' + selectedCardData.description + ' ]');
+    }
+  }, [selectedCardData, showCloseButton]);
+  
+
   return (
     <div className={styles.request}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
-        {(((isAboutPage && aboutIsOrigin) || portfolioIsOrigin) || servicesIsOrigin) && (
+        {((isAboutPage && aboutIsOrigin) || portfolioIsOrigin || servicesIsOrigin) && (
           <div className={styles.justSpace}></div>
         )}
 
