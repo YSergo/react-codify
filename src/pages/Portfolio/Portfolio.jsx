@@ -5,8 +5,7 @@ import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import ContentLoader from 'react-content-loader';
 import { useEffect, useState } from 'react';
 
-
-function Portfolio({ projects, projectsLoading, isMobile }) {
+function Portfolio({ projects, projectsLoading, isMobile, isTablet }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -51,6 +50,26 @@ function Portfolio({ projects, projectsLoading, isMobile }) {
     return skeletons;
   };
 
+  const renderTabletSkeletons = () => {
+    const skeletons = [];
+    for (let i = 0; i < 4; i++) {
+      skeletons.push(
+        <ContentLoader
+          key={i}
+          speed={2}
+          width='calc(50% - 2.4vw)'
+          height='54vw'
+          viewBox='0 0 443 554'
+          backgroundColor='#f3f3f3' //'
+          foregroundColor='white'
+        >
+          <rect x='15' y='10' rx='0' ry='0' width='93%' height='93%' />
+        </ContentLoader>
+      );
+    }
+    return skeletons;
+  };
+
   const [portfolioIsOrigin, setPortfolioIsOrigin] = useState(true);
 
   return (
@@ -59,6 +78,8 @@ function Portfolio({ projects, projectsLoading, isMobile }) {
         {projectsLoading
           ? isMobile
             ? renderMobileSkeletons()
+            : isTablet
+            ? renderTabletSkeletons()
             : renderSkeletons()
           : projects.map((item) => (
               <PortfolioCard

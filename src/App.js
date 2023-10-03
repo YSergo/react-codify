@@ -128,7 +128,7 @@ function App() {
         ></Route>
         <Route
           path='/portfolio'
-          element={<Portfolio projects={projects} projectsLoading={projectsLoading} isMobile={isMobile} />}
+          element={<Portfolio projects={projects} projectsLoading={projectsLoading} isMobile={isMobile} isTablet={isTablet} />}
         ></Route>
       </Routes>
       {!isTablet && !isMobile && !isHomePage && <Footer />}
