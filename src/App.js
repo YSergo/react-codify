@@ -123,6 +123,7 @@ function App() {
               favorsLoading={favorsLoading}
               isMobile={isMobile}
               setSelectedCardData={setSelectedCardData}
+              isTablet={isTablet}
             />
           }
         ></Route>

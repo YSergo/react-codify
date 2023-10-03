@@ -5,7 +5,7 @@ import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import ContentLoader from 'react-content-loader';
 import { useEffect, useState } from 'react';
 
-function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData }) {
+function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData, isTablet }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -50,12 +50,32 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelecte
     return skeletons;
   };
 
-  const [servicesIsOrigin, setServicesIsOrigin] = useState(true)
+  const renderTabletSkeletons = () => {
+    const skeletons = [];
+    for (let i = 0; i < 6; i++) {
+      skeletons.push(
+        <ContentLoader
+          key={i}
+          speed={2}
+          width='calc(50% - 2.4vw)'
+          height='23vw'
+          viewBox='0 0 446 226'
+          backgroundColor='#f3f3f3'
+          foregroundColor='white'
+        >
+          <rect x='0' y='0' rx='0' ry='0' width='100%' height='100%' />
+        </ContentLoader>
+      );
+    }
+    return skeletons;
+  };
 
-    // Обработчик для установки данных из выбранной карточки
-    const handleCardClick = (data) => {
-        setSelectedCardData(data);
-    };
+  const [servicesIsOrigin, setServicesIsOrigin] = useState(true);
+
+  // Обработчик для установки данных из выбранной карточки
+  const handleCardClick = (data) => {
+    setSelectedCardData(data);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -63,6 +83,8 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelecte
         {favorsLoading
           ? isMobile
             ? renderMobileSkeletons()
+            : isTablet
+            ? renderTabletSkeletons()
             : renderSkeletons()
           : favors.map((item) => (
               <ServiceCard
