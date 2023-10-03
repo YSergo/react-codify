@@ -99,7 +99,7 @@ function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsO
   
 
   return (
-    <div className={styles.request}>
+    <div className={`${styles.request} ${showCloseButton ? styles.wideRequest : ''}`}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
         {((isAboutPage && aboutIsOrigin) || portfolioIsOrigin || servicesIsOrigin) && (
@@ -126,7 +126,7 @@ function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsO
           <div className={styles.loadingIcon} />
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className={styles.contactForm} noValidate>
+        <form onSubmit={handleSubmit} className={`${styles.contactForm} ${showCloseButton ? styles.wideContactForm : ''}`} noValidate>
           <h3 className={styles.firstP}>
             Оставьте свои
             <br />
