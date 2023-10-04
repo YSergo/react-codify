@@ -3,7 +3,14 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function Request({ onClose, showCloseButton = false, isFromAboutPage, portfolioIsOrigin,  isFromServicesPage, selectedCardData = {} }) {
+function Request({
+  onClose,
+  showCloseButton = false,
+  isFromAboutPage,
+  isFromPortfolioPage,
+  isFromServicesPage,
+  selectedCardData = {},
+}) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -96,13 +103,12 @@ function Request({ onClose, showCloseButton = false, isFromAboutPage, portfolioI
       setRequest('Хочу карточку [ ' + selectedCardData.title + ': ' + selectedCardData.description + ' ]');
     }
   }, [selectedCardData, showCloseButton]);
-  
 
   return (
     <div className={`${styles.request} ${showCloseButton ? styles.wideRequest : ''}`}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
-        {((isAboutPage && isFromAboutPage) || portfolioIsOrigin ||  isFromServicesPage) && (
+        {((isAboutPage && isFromAboutPage) || isFromPortfolioPage || isFromServicesPage) && (
           <div className={styles.justSpace}></div>
         )}
 
@@ -126,7 +132,11 @@ function Request({ onClose, showCloseButton = false, isFromAboutPage, portfolioI
           <div className={styles.loadingIcon} />
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className={`${styles.contactForm} ${showCloseButton ? styles.wideContactForm : ''}`} noValidate>
+        <form
+          onSubmit={handleSubmit}
+          className={`${styles.contactForm} ${showCloseButton ? styles.wideContactForm : ''}`}
+          noValidate
+        >
           <h3 className={styles.firstP}>
             Оставьте свои
             <br />
