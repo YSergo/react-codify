@@ -47,8 +47,6 @@ function About() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [aboutIsOrigin, setAboutIsOrigin] = useState(true);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.description}>
@@ -223,7 +221,7 @@ function About() {
 
       <div className={styles.contacts}>
         <Contacts />
-        <Request aboutIsOrigin={() => setAboutIsOrigin(aboutIsOrigin)} />
+        <Request isFromAboutPage = {true} />
       </div>
     </div>
   );

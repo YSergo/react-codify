@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsOrigin,  isFromServicesPage, selectedCardData = {} }) {
+function Request({ onClose, showCloseButton = false, isFromAboutPage, portfolioIsOrigin,  isFromServicesPage, selectedCardData = {} }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -102,7 +102,7 @@ function Request({ onClose, showCloseButton = false, aboutIsOrigin, portfolioIsO
     <div className={`${styles.request} ${showCloseButton ? styles.wideRequest : ''}`}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
-        {((isAboutPage && aboutIsOrigin) || portfolioIsOrigin ||  isFromServicesPage) && (
+        {((isAboutPage && isFromAboutPage) || portfolioIsOrigin ||  isFromServicesPage) && (
           <div className={styles.justSpace}></div>
         )}
 
