@@ -1,7 +1,6 @@
 import styles from './Request.module.scss';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 function Request({
   onClose,
@@ -95,9 +94,6 @@ function Request({
     }
   };
 
-  const location = useLocation();
-  const isAboutPage = location.pathname === '/about';
-
   useEffect(() => {
     if (showCloseButton && selectedCardData.title && selectedCardData.description) {
       setRequest('Хочу карточку [ ' + selectedCardData.title + ': ' + selectedCardData.description + ' ]');
@@ -108,7 +104,7 @@ function Request({
     <div className={`${styles.request} ${showCloseButton ? styles.wideRequest : ''}`}>
       <div className={styles.requestTop}>
         <h2>Заявка</h2>
-        {((isAboutPage && isFromAboutPage) || isFromPortfolioPage || isFromServicesPage) && (
+        {(isFromAboutPage || isFromPortfolioPage || isFromServicesPage) && (
           <div className={styles.justSpace}></div>
         )}
 
