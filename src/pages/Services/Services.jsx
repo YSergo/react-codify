@@ -3,14 +3,14 @@ import Contacts from '../../components/Contacts/Contacts';
 import Request from '../../components/Request/Request';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import ContentLoader from 'react-content-loader';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData, isTablet }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-/*   Обработчик для установки данных из выбранной карточки */
+  /*   Обработчик для установки данных из выбранной карточки */
   const handleCardClick = (data) => {
     setSelectedCardData(data);
   };
@@ -58,14 +58,12 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelecte
     ));
   }
 
-  const [servicesIsOrigin, setServicesIsOrigin] = useState(true);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>{content}</div>
       <div className={styles.contacts}>
         <Contacts />
-        <Request servicesIsOrigin={() => setServicesIsOrigin(servicesIsOrigin)} />
+        <Request isFromServicesPage={true} />
       </div>
     </div>
   );
