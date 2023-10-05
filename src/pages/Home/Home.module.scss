@@ -136,3 +136,18 @@
     }
   }
 }
+
+@media screen and (orientation: landscape) and (min-width: 768px)  and (max-width: 1336px) {
+  .homePage {
+    margin-top: 15vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
+  .homePage {
+    margin-top: 0;
+    h1 {
+      font-size: 6vw;
+    }
+  }
+}
