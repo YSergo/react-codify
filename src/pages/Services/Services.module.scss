@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .wrapper {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -36,7 +36,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1336px) {
+@media (min-width: 576px) and (max-width: 1336px) {
   .wrapper {
     margin-left: 35px;
     margin-right: 35px;

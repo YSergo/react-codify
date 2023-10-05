@@ -56,7 +56,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   html {
     font-size: 4vw;
   }
@@ -95,7 +95,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1336px) {
+@media (min-width: 576px) and (max-width: 1336px) {
   .homePage {
     display: flex;
     flex-direction: column;
@@ -119,6 +119,7 @@
       font-size: 2.5vw;
       line-height: 0;
       transition: background-color 0.3s ease-in-out;
+      color: #000000;
 
       &:hover {
         background-color: $color-hover;

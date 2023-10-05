@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.scss';
 import Drawer from './components/Drawer/Drawer';
-import Header from './components/Header/Header'; // if u have index.js in it u can use just /Header
+import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Footer from './components/Footer/Footer';
@@ -33,8 +33,9 @@ function App() {
   const isHomePage = location.pathname === '/';
   //mob
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const isMobile = windowWidth <= 767;
-  const isTablet = windowWidth > 767 && windowWidth <= 1336;
+  const isMobile = windowWidth < 576;
+  const isTablet = windowWidth >= 576 && windowWidth <= 1336;
+  console.log(windowWidth);
 
   useEffect(() => {
     const handleResize = () => {

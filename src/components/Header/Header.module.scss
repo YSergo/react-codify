@@ -71,11 +71,15 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1336px) {
+@media (min-width: 576px) and (max-width: 1336px) {
   .header {
     margin-left: 0vw;
     margin-right: 0vw;
     padding: 20px;
+
+    button {
+      color: #000000;
+    }
 
     &Left {
       button {
