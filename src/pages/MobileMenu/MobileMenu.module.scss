@@ -160,3 +160,10 @@
   position: sticky;
   bottom: 2.2vh;
 }
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
+  /* Скрываем основное содержимое сайта */
+  .wrapper {
+    display: none;
+  }
+}

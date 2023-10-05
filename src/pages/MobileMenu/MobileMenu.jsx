@@ -1,10 +1,36 @@
 import styles from './MobileMenu.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 import { handlePhoneClick, handleTelegramClick, handleEmailClick } from '../../utils/contactHelpers';
+import { useEffect } from 'react';
 
 function MobileMenu({ onClose, setDrawerOpened, setOrigin, setOpenedFromMenu }) {
   const location = useLocation();
   const isSelected = (path) => location.pathname === path;
+
+  //fixing non-existing landscape look with closing drawer
+  useEffect(() => {
+    const landscapeQuery = window.matchMedia('(orientation: landscape)');
+
+    const checkOrientation = (e) => {
+      if (e.matches) {
+        // Если ориентация ландшафтная
+        setDrawerOpened(false);
+      }
+    };
+
+    landscapeQuery.addListener(checkOrientation);
+
+    // Проверка при инициализации
+    if (landscapeQuery.matches) {
+      setDrawerOpened(false);
+    }
+
+    // Удаляем слушатель при размонтировании компонента
+    return () => {
+      landscapeQuery.removeListener(checkOrientation);
+    };
+  }, [setDrawerOpened]);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
