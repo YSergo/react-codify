@@ -52,6 +52,8 @@ function App() {
   const [favors, setFavors] = useState([]);
   const [favorsLoading, setFavorsLoading] = useState(true);
 
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -62,6 +64,7 @@ function App() {
           },
         });
         setFavors(response.data);
+        await delay(4000);
         setFavorsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
@@ -86,6 +89,7 @@ function App() {
           },
         });
         setProjects(response.data);
+        await delay(4000);
         setProjectsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
