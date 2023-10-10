@@ -19,7 +19,7 @@ function ServiceCard({ setDrawerOpened, title, description, price, onCardClick }
 
   useEffect(() => {
     window.addEventListener('scroll', checkIfInView);
-    checkIfInView(); // Проверить при монтировании
+    checkIfInView();
 
     return () => {
       window.removeEventListener('scroll', checkIfInView);
