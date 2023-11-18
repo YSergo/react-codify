@@ -145,6 +145,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/traverse": "^7.23.3",
     "cross-env": "^7.0.3"
   }
 }
