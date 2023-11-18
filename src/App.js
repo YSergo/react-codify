@@ -63,7 +63,7 @@ function App() {
           },
         });
         setFavors(response.data);
-        await delay(4000);
+        await delay(1500);
         setFavorsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
@@ -88,7 +88,7 @@ function App() {
           },
         });
         setProjects(response.data);
-        await delay(4000);
+        await delay(1500);
         setProjectsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
