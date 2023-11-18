@@ -80,7 +80,7 @@ function Request({
     };
 
     try {
-      await axios.post('https://apialisada11-721689c1d185.herokuapp.com/api/application/', formData);
+      await axios.post('https://65590f05e93ca47020aa08a5.mockapi.io/requests/', formData);
       setTimeout(() => {
         setSending(false);
         setIsSent(true);
