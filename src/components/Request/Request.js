@@ -96,7 +96,7 @@ function Request({
 
   useEffect(() => {
     if (showCloseButton && selectedCardData.title && selectedCardData.description) {
-      setRequest('Хочу карточку [ ' + selectedCardData.title + ': ' + selectedCardData.description + ' ]');
+      setRequest('Хочу карточку "' + selectedCardData.title + ': ' + selectedCardData.description + '"');
     }
   }, [selectedCardData, showCloseButton]);
 
