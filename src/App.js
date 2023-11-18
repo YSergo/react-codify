@@ -57,17 +57,13 @@ function App() {
     async function fetchData() {
       try {
         setFavorsLoading(true);
-        const response = await axios.get('https://apialisada11-721689c1d185.herokuapp.com/api/services/', {
-          headers: {
-            Authorization: `Token a1c9a99ab227e3432fd17d3fa05cde9088bdb0d0`, //Hello GitHub #1
-          },
-        });
+        const response = await axios.get('https://64c14d7efa35860baea05e92.mockapi.io/services/');
         setFavors(response.data);
         await delay(1500);
         setFavorsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
-        alert(':C');
+        alert('Error fetching data. Perhaps mockapi problem or try to slow down :(');
         setFavorsLoading(false);
       }
     }
@@ -82,17 +78,13 @@ function App() {
     async function fetchData() {
       try {
         setProjectsLoading(true);
-        const response = await axios.get('https://apialisada11-721689c1d185.herokuapp.com/api/projects/', {
-          headers: {
-            Authorization: `Token a1c9a99ab227e3432fd17d3fa05cde9088bdb0d0`, //Hello GitHub #2
-          },
-        });
+        const response = await axios.get('https://64c14d7efa35860baea05e92.mockapi.io/projects/');
         setProjects(response.data);
         await delay(1500);
         setProjectsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
-        alert(':C');
+        alert('Error fetching data. Perhaps mockapi problem or try to slow down :(');
         setProjectsLoading(false);
       }
     }
