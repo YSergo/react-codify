@@ -1,7 +1,7 @@
 import styles from './Home.module.scss';
 import { useEffect } from 'react';
 
-function Home({ setDrawerOpened }) {
+function Home({ setDrawerOpened, setSelectedCardData }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -10,7 +10,14 @@ function Home({ setDrawerOpened }) {
     <main className={styles.homePage}>
       <div className={styles.animateRequest}>
         <h1>Дизайн и разработка интерфейсов</h1>
-        <button onClick={() => setDrawerOpened(true)}>Заказать проект</button>
+        <button
+          onClick={() => {
+            setDrawerOpened(true);
+            setSelectedCardData({});
+          }}
+        >
+          Заказать проект
+        </button>
       </div>
     </main>
   );

@@ -116,7 +116,7 @@ function App() {
       />
       {isMobile ? <HeaderMobile setDrawerOpened={setDrawerState} setOrigin={setOrigin} /> : <Header />}
       <Routes>
-        <Route path='/' element={<Home setDrawerOpened={setDrawerState} />} />
+        <Route path='/' element={<Home setDrawerOpened={setDrawerState}  setSelectedCardData={setSelectedCardData} />} />
         <Route path='/about' element={<About />} />
         <Route
           path='/services'
