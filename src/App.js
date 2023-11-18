@@ -63,7 +63,7 @@ function App() {
         setFavorsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
-        alert('Error fetching data. Perhaps mockapi problem or try to slow down :(');
+        alert('Ошибка получения данных. Возможно проблема с сервером. Попробуйте подождать :(');
         setFavorsLoading(false);
       }
     }
@@ -84,7 +84,7 @@ function App() {
         setProjectsLoading(false);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
-        alert('Error fetching data. Perhaps mockapi problem or try to slow down :(');
+        alert('Ошибка получения данных. Возможно проблема с сервером. Попробуйте подождать :(');
         setProjectsLoading(false);
       }
     }
