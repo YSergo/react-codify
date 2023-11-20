@@ -43,12 +43,14 @@ function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
           Заказать проект
         </button>
       </div>
-      <div className={isVisible ? styles.animateRequest : ''}>
-        <div ref={aboutRef} className={styles.aboutPart}>
-          <h1> О нас</h1>
-          {isMobile && <About isOnHome={true} />}
+      {isMobile && (
+        <div className={`${styles.content} ${isVisible ? styles.animateRequest : ''}`}>
+          <div ref={aboutRef} className={styles.aboutPart}>
+            <h1> О нас</h1>
+            <About isOnHome={true} />
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }
