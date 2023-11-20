@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 import Contacts from '../../components/Contacts/Contacts';
 import slideInStyles from './slideInStyles.module.scss';
 
-function About() {
+function About({isOnHome}) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -48,7 +48,7 @@ function About() {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={!isOnHome && styles.wrapper}>
       <div className={styles.description}>
         <div className={styles.container1}>
           <h2 className={styles.line1}>Мы — команда друзей,</h2>
@@ -219,10 +219,10 @@ function About() {
         </div>
       </div>
 
-      <div className={styles.contacts}>
+    {!isOnHome && <div className={styles.contacts}>
         <Contacts />
         <Request isFromAboutPage = {true} />
-      </div>
+      </div>}
     </div>
   );
 }

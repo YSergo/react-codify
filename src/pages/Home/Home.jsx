@@ -1,7 +1,8 @@
 import styles from './Home.module.scss';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import About from '../About/About';
 
-function Home({ setDrawerOpened, setSelectedCardData }) {
+function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,6 +19,13 @@ function Home({ setDrawerOpened, setSelectedCardData }) {
         >
           Заказать проект
         </button>
+      </div>
+
+      <div className={styles.animateRequest}>
+        <div className={styles.aboutPart}>
+          <h1> О нас</h1>
+          {isMobile && <About isOnHome={true} />}
+        </div>
       </div>
     </main>
   );
