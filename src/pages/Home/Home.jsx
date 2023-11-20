@@ -7,6 +7,29 @@ function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const aboutRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const aboutElement = aboutRef.current;
+    if (!aboutElement) return;
+
+    const handleScroll = () => {
+      const { top } = aboutElement.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <main className={styles.homePage}>
       <div className={styles.animateRequest}>
@@ -20,9 +43,8 @@ function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
           Заказать проект
         </button>
       </div>
-
-      <div className={styles.animateRequest}>
-        <div className={styles.aboutPart}>
+      <div className={isVisible ? styles.animateRequest : ''}>
+        <div ref={aboutRef} className={styles.aboutPart}>
           <h1> О нас</h1>
           {isMobile && <About isOnHome={true} />}
         </div>
