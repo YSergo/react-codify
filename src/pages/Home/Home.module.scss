@@ -93,8 +93,15 @@
       margin-bottom: 2rem;
     }
   }
+
+  .content {
+    opacity: 0;
+  }
   .aboutPart {
     margin-top: 45vh;
+  }
+  .visible {
+    opacity: 1;
   }
 }
 
