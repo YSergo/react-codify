@@ -10,7 +10,7 @@
   position: relative;
   border: 5px solid $color-background;
   box-sizing: border-box;
-  transition: border-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   img {
     height: 100%;
@@ -180,7 +180,7 @@
     position: relative;
     border: 0.8vw solid $color-background;
     box-sizing: border-box;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     img {
       max-height: 26.8vw;
