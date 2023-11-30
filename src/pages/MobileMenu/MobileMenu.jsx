@@ -1,6 +1,6 @@
 import styles from './MobileMenu.module.scss';
 import { Link, useLocation } from 'react-router-dom';
-import { handlePhoneClick, handleTelegramClick, handleEmailClick } from '../../utils/contactHelpers';
+// import { handlePhoneClick, handleTelegramClick, handleEmailClick } from '../../utils/contactHelpers';
 import { useEffect } from 'react';
 
 function MobileMenu({ onClose, setDrawerOpened, setOrigin, setOpenedFromMenu }) {
@@ -87,13 +87,13 @@ function MobileMenu({ onClose, setDrawerOpened, setOrigin, setOpenedFromMenu }) 
           >
             Заказать проект
           </button>
-          <footer className={styles.footer}>
+          {/* <footer className={styles.footer}>
             <ul>
               <li onClick={handlePhoneClick}>+995 (55) 100-64-22</li>
               <li onClick={handleTelegramClick}>@YSergo</li>
               <li onClick={handleEmailClick}>iakunchikhin@gmail.com</li>
             </ul>
-          </footer>
+          </footer> */}
         </div>
       </div>
     </div>
