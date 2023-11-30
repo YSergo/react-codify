@@ -118,6 +118,8 @@ function App() {
               isTablet={isTablet}
               favors={favors}
               favorsLoading={favorsLoading}
+              projects={projects}
+              projectsLoading={projectsLoading}
             />
           }
         />

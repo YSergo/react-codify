@@ -2,8 +2,18 @@ import styles from './Home.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import About from '../About/About';
 import Services from '../Services/Services';
+import Portfolio from '../Portfolio/Portfolio';
 
-function Home({ setDrawerOpened, setSelectedCardData, isMobile, isTablet, favors, favorsLoading }) {
+function Home({
+  setDrawerOpened,
+  setSelectedCardData,
+  isMobile,
+  isTablet,
+  favors,
+  favorsLoading,
+  projects,
+  projectsLoading,
+}) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -66,6 +76,10 @@ function Home({ setDrawerOpened, setSelectedCardData, isMobile, isTablet, favors
               isTablet={isTablet}
               isOnHome={true}
             />
+          </div>
+          <div className={styles.portfolioPart}>
+            <h1>Порфтолио</h1>
+            <Portfolio projects={projects} projectsLoading={projectsLoading} />
           </div>
         </div>
       )}
