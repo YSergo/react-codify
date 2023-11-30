@@ -36,7 +36,7 @@ function PortfolioCard({ title, description, image, url }) {
       <img src={image} alt='site' />
       <h1 className={styles.portfolioCardTitle}>{title}</h1>
       <span>{description}</span>
-      <button onClick={() => handleClick(url)} disabled={!isProjectAvailable}>
+      <button className={styles.checkSiteButton} onClick={() => handleClick(url)} disabled={!isProjectAvailable}>
         {buttonText}
         {isProjectAvailable ? (
           <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
