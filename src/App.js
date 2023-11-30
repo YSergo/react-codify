@@ -108,7 +108,19 @@ function App() {
       />
       {isMobile ? <HeaderMobile setDrawerOpened={setDrawerState} setOrigin={setOrigin} /> : <Header />}
       <Routes>
-        <Route path='/' element={<Home setDrawerOpened={setDrawerState}  setSelectedCardData={setSelectedCardData} isMobile={isMobile} />} />
+        <Route
+          path='/'
+          element={
+            <Home
+              setDrawerOpened={setDrawerState}
+              setSelectedCardData={setSelectedCardData}
+              isMobile={isMobile}
+              isTablet={isTablet}
+              favors={favors}
+              favorsLoading={favorsLoading}
+            />
+          }
+        />
         <Route path='/about' element={<About />} />
         <Route
           path='/services'
@@ -125,11 +137,18 @@ function App() {
         ></Route>
         <Route
           path='/portfolio'
-          element={<Portfolio projects={projects} projectsLoading={projectsLoading} isMobile={isMobile} isTablet={isTablet} />}
+          element={
+            <Portfolio
+              projects={projects}
+              projectsLoading={projectsLoading}
+              isMobile={isMobile}
+              isTablet={isTablet}
+            />
+          }
         ></Route>
       </Routes>
       {!isTablet && !isMobile && !isHomePage && <Footer />}
-      {isTablet && (<div style={{marginTop: '35px'}}></div>)}
+      {isTablet && <div style={{ marginTop: '35px' }}></div>}
     </div>
   );
 }

@@ -6,7 +6,7 @@
   margin-top: 60px;
 }
 
-.content {
+.cards {
   margin-bottom: 120px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(396px, 1fr));
@@ -25,9 +25,10 @@
     margin-top: 22vw;
   }
 
-  .content {
+  .cards {
     grid-gap: 2.5%;
     margin-bottom: 54vw;
+    max-width: 22.5rem;
   }
 
   .contacts {
@@ -43,7 +44,7 @@
     margin-top: 4.3vw;
   }
 
-  .content {
+  .cards {
     margin-bottom: 120px;
     display: flex;
     flex-wrap: wrap;

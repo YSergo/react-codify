@@ -1,8 +1,9 @@
 import styles from './Home.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import About from '../About/About';
+import Services from '../Services/Services';
 
-function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
+function Home({ setDrawerOpened, setSelectedCardData, isMobile, isTablet, favors, favorsLoading }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -51,8 +52,20 @@ function Home({ setDrawerOpened, setSelectedCardData, isMobile }) {
           }`}
         >
           <div className={styles.aboutPart}>
-            <h1> О нас</h1>
+            <h1>О нас</h1>
             <About isOnHome={true} />
+          </div>
+          <div className={styles.servicesPart}>
+            <h1>Услуги</h1>
+            <Services
+              setDrawerOpened={setDrawerOpened}
+              favors={favors}
+              favorsLoading={favorsLoading}
+              isMobile={isMobile}
+              setSelectedCardData={setSelectedCardData}
+              isTablet={isTablet}
+              isOnHome={true}
+            />
           </div>
         </div>
       )}

@@ -5,7 +5,7 @@ import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import ContentLoader from 'react-content-loader';
 import { useEffect } from 'react';
 
-function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData, isTablet }) {
+function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelectedCardData, isTablet, isOnHome }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -59,12 +59,12 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelecte
   }
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>{content}</div>
-      <div className={styles.contacts}>
+    <div className={!isOnHome && styles.wrapper}>
+      <div className={styles.cards}>{content}</div>
+      {!isOnHome && <div className={styles.contacts}>
         <Contacts />
-        <Request isFromServicesPage={true} />
-      </div>
+        <Request isFromServicesPage = {true} />
+      </div>}
     </div>
   );
 }
