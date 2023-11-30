@@ -175,7 +175,7 @@ function Request({
             type='text'
           ></textarea>
 
-          <button type='submit'>Отправить</button>
+          <button className={styles.buttonX} type='submit'>Отправить</button>
         </form>
       )}
     </div>

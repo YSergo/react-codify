@@ -55,10 +55,10 @@ function Portfolio({ projects, projectsLoading, isMobile, isTablet, isOnHome }) 
   return (
     <div className={!isOnHome && styles.wrapper}>
       <div className={styles.portfolioContent}>{content}</div>
-      {!isOnHome && <div className={styles.contacts}>
+      <div className={styles.contacts}>
         <Contacts />
-        <Request isFromPortfolioPage = {true} />
-      </div>}
+        <Request isFromPortfolioPage={true} />
+      </div>
     </div>
   );
 }
