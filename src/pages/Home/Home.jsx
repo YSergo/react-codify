@@ -55,7 +55,7 @@ function Home({
     <main className={styles.homePage}>
       <div className={styles.animateRequest}>
         <h1>Дизайн и разработка интерфейсов</h1>
-        <button
+        <button className={styles.orderButtonHome}
           onClick={() => {
             setDrawerOpened(true);
             setSelectedCardData({});

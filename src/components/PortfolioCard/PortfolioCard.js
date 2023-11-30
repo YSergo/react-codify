@@ -34,7 +34,7 @@ function PortfolioCard({ title, description, image, url }) {
   return (
     <div ref={cardRef} className={`${styles.card} ${isInView ? styles.inView : ''}`}>
       <img src={image} alt='site' />
-      <h1>{title}</h1>
+      <h1 className={styles.portfolioCardTitle}>{title}</h1>
       <span>{description}</span>
       <button onClick={() => handleClick(url)} disabled={!isProjectAvailable}>
         {buttonText}
