@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-codify/static/css/main.ec11f257.css",
-    "main.js": "/react-codify/static/js/main.19bfeec9.js",
+    "main.css": "/react-codify/static/css/main.6e18e9c9.css",
+    "main.js": "/react-codify/static/js/main.70e6681d.js",
     "static/media/bo.jpg": "/react-codify/static/media/bo.0d2cceb420bf27f2a3e0.jpg",
     "static/media/me.jpeg": "/react-codify/static/media/me.06a19440e26d3fe0c384.jpeg",
     "static/media/kris.jpg": "/react-codify/static/media/kris.3f14d5437f8650ce904d.jpg",
     "index.html": "/react-codify/index.html",
-    "main.ec11f257.css.map": "/react-codify/static/css/main.ec11f257.css.map",
-    "main.19bfeec9.js.map": "/react-codify/static/js/main.19bfeec9.js.map"
+    "main.6e18e9c9.css.map": "/react-codify/static/css/main.6e18e9c9.css.map",
+    "main.70e6681d.js.map": "/react-codify/static/js/main.70e6681d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec11f257.css",
-    "static/js/main.19bfeec9.js"
+    "static/css/main.6e18e9c9.css",
+    "static/js/main.70e6681d.js"
   ]
 }
