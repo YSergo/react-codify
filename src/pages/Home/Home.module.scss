@@ -94,17 +94,17 @@
     }
   }
 
-  .content {
-    opacity: 0;
-  }
   .aboutPart {
     margin-top: 45vh;
+    opacity: 0;
   }
   .servicesPart {
-    margin-top: 20vh;
+    margin-top: 10vh;
+    opacity: 0;
   }
-  .visible {
-    opacity: 1;
+  .portfolioPart {
+    margin-top: 30vh;
+    opacity: 0;
   }
 }
 
