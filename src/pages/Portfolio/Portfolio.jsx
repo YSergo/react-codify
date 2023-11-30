@@ -53,7 +53,7 @@ function Portfolio({ projects, projectsLoading, isMobile, isTablet, isOnHome }) 
   }
 
   return (
-    <div className={!isOnHome && styles.wrapper}>
+    <div className={isOnHome ? '' : styles.wrapper}>
       <div className={styles.portfolioContent}>{content}</div>
       <div className={styles.contacts}>
         <Contacts />

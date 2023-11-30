@@ -59,7 +59,7 @@ function Services({ setDrawerOpened, favors, favorsLoading, isMobile, setSelecte
   }
 
   return (
-    <div className={!isOnHome && styles.wrapper}>
+    <div className={isOnHome ? '' : styles.wrapper}>
       <div className={styles.cards}>{content}</div>
       {!isOnHome && <div className={styles.contacts}>
         <Contacts />
