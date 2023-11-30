@@ -6,7 +6,7 @@
   margin-top: 60px;
 }
 
-.content {
+.portfolioContent {
   margin-bottom: 120px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(396px, 1fr));
@@ -25,11 +25,12 @@
     margin-top: 22vw;
   }
 
-  .content {
+  .portfolioContent {
     margin-bottom: 18vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(396px, 1fr));
     grid-gap: 15vw;
+    max-width: 90vw;
   }
 
   .contacts {
@@ -45,7 +46,7 @@
     margin-top: 4vw;
   }
   
-  .content {
+  .portfolioContent {
     margin-bottom: 120px;
     display: flex;
     flex-wrap: wrap;

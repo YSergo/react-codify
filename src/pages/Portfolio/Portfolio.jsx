@@ -5,7 +5,7 @@ import PortfolioCard from '../../components/PortfolioCard/PortfolioCard';
 import ContentLoader from 'react-content-loader';
 import { useEffect } from 'react';
 
-function Portfolio({ projects, projectsLoading, isMobile, isTablet }) {
+function Portfolio({ projects, projectsLoading, isMobile, isTablet, isOnHome }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,12 +53,12 @@ function Portfolio({ projects, projectsLoading, isMobile, isTablet }) {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.content}>{content}</div>
-      <div className={styles.contacts}>
+    <div className={!isOnHome && styles.wrapper}>
+      <div className={styles.portfolioContent}>{content}</div>
+      {!isOnHome && <div className={styles.contacts}>
         <Contacts />
-        <Request isFromPortfolioPage={true} />
-      </div>
+        <Request isFromPortfolioPage = {true} />
+      </div>}
     </div>
   );
 }

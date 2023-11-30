@@ -79,7 +79,7 @@ function Home({
           </div>
           <div className={styles.portfolioPart}>
             <h1>Порфтолио</h1>
-            <Portfolio projects={projects} projectsLoading={projectsLoading} />
+            <Portfolio projects={projects} projectsLoading={projectsLoading} isOnHome={true} />
           </div>
         </div>
       )}
